@@ -69,7 +69,7 @@ For more information on using the Angular CLI, including detailed command refere
 4. **Autenticación en Angular 17**: (https://www.techiediaries.com/login-signup-api-angular-17/)
 5. **Tareas comunes en el enrutamiento de Angular**: (https://angular.dev/guide/routing/common-router-tasks)
 6. **Vídeo tutorial sobre login en Angular**: (https://www.youtube.com/watch?v=-aXZOGQcOcE)
-Además del material proporcionado por el grupo del seminario
+7. Material proporcionado por el grupo del seminario
 ## Uso de ChatGPT
 
 Para ampliar la información de estas páginas,resolver errores y entender mejor los conceptos.
