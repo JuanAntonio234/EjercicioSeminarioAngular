@@ -3,6 +3,7 @@ import { Component, inject, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
   authService = inject(AuthService);
   @Output() loggedin = new EventEmitter<string>();
   @Output() exportLoggedIn = new EventEmitter<boolean>();
+  router = inject(Router);
 
   constructor(private form: FormBuilder){
     this.formularioLogin = this.form.group({
@@ -51,7 +53,7 @@ ngOnInit(): void {
       next: (response) => {
         console.log('Login exitoso:', response);
         this.exportLoggedIn.emit(true);
-      
+        this.router.navigate(['/usuario']);
       },
       error: (error) => {
         console.error('Error en el login:', error);

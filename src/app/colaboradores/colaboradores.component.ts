@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ColaboradoresComponent {
   users: User [];
-  query = 'b';
+  query = '';
   //Para recibir el usuario que proviene del componente usuario
   @Input() usuario: User = new User();
 

@@ -1,0 +1,26 @@
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <h1>Register Form</h1> 
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:  </label>
+            <input [ngClass]="{'is-invalid': hasError('name','required')}"
+            type="text" class="form-control" id="name" formControlName="name">
+            <div class="text-danger" *ngIf="hasError('name','required')">Name required.</div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:  </label>
+            <input [ngClass]="{'is-invalid': hasError('email','required') || hasError('email','email')}"
+            type="email" class="form-control" id="email" formControlName="email">
+            <div class="text-danger" *ngIf="hasError('email','required')">Email requerido.</div>
+            <div class="text-danger" *ngIf="hasError('email','email')">Email inválido.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password:  </label>
+            <input [ngClass]="{'is-invalid': hasError('password','required') || hasError('password','minlength')}"
+            type="password" class="form-control" id="Password" formControlName="password">
+            <div class="text-danger" *ngIf="hasError('password','required')">Contraseña requerida.</div>
+            <div class="text-danger" *ngIf="hasError('password','minlength')">Contraseña inválida, tienes menos de 8 carácteres.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
